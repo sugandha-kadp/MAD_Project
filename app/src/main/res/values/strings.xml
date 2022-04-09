@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MAD Final Project</string>
+    <string name="lbl_PaymentData">Payment Data</string>
+    <string name="lbl_total_price" />
+    <string name="lbl_total">Total Price</string>
+
+</resources>
