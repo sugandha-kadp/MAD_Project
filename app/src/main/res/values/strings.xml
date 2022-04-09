@@ -3,5 +3,15 @@
     <string name="lbl_PaymentData">Payment Data</string>
     <string name="lbl_total_price" />
     <string name="lbl_total">Total Price</string>
+    <string name="lbl_CardNumber">Card Number</string>
+    <string name="lbl_ValidUntil">Valid until</string>
+    <string name="lbl_CVV">CVV</string>
+    <string name="lbl_CardHolder">Card holder</string>
+    <string name="lbl_SaveCard">Save card data for future payments</string>
+    <string name="btn_confirm">Proceed To Confirm</string>
+    <string name="et_CardNumber" />
+    <string name="et_ValidUntil" />
+    <string name="et_CVV" />
+    <string name="et_CardHolder" />
 
 </resources>

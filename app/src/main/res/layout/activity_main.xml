@@ -49,7 +49,7 @@
     <TextView
         android:id="@+id/lbl_total_price"
         android:layout_width="193dp"
-        android:layout_height="53dp"
+        android:layout_height="59dp"
         android:layout_marginStart="92dp"
         android:layout_marginTop="8dp"
         android:text="@string/lbl_total_price"
@@ -68,10 +68,11 @@
         app:layout_constraintTop_toBottomOf="@+id/lbl_total_price">
 
         <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_width="4dp"
+            android:id="@+id/radioButtonVisa"
+            android:layout_width="2dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            tools:ignore="TouchTargetSizeCheck" />
 
         <ImageView
             android:id="@+id/imageView2"
@@ -88,10 +89,11 @@
             app:srcCompat="@drawable/blank" />
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/radioButtonMaster"
             android:layout_width="2dp"
             android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            tools:ignore="TouchTargetSizeCheck" />
 
         <ImageView
             android:id="@+id/imageView"
@@ -104,70 +106,74 @@
 
     <EditText
         android:id="@+id/editTextTextPersonName2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
+        android:layout_width="319dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="44dp"
         android:layout_marginTop="4dp"
-        android:backgroundTint="#00FFFFFF"
+        android:background="@drawable/custom_input"
         android:ems="10"
-        android:foregroundTint="#00AC2B2B"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:minHeight="48dp"
-        android:text="Name"
+        android:text="@string/et_CardNumber"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/editTextTextPersonName3"
-        android:layout_width="119dp"
-        android:layout_height="48dp"
+        android:layout_width="125dp"
+        android:layout_height="49dp"
         android:layout_marginStart="43dp"
         android:layout_marginTop="4dp"
-        android:backgroundTint="#00FFFFFF"
+        android:background="@drawable/custom_input"
+        android:drawablePadding="14sp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
+        android:inputType="number"
+        android:text="@string/et_ValidUntil"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/editTextTextPersonName4"
-        android:layout_width="143dp"
-        android:layout_height="48dp"
+        android:layout_width="120dp"
+        android:layout_height="49dp"
         android:layout_marginStart="63dp"
-        android:backgroundTint="#00FFFFFF"
+        android:background="@drawable/custom_input"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
+        android:inputType="number"
+        android:text="@string/et_CVV"
         app:layout_constraintBaseline_toBaselineOf="@+id/editTextTextPersonName3"
-        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName3" />
+        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName3"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/editTextTextPersonName5"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="49dp"
         android:layout_marginStart="43dp"
         android:layout_marginTop="7dp"
-        android:backgroundTint="#00FFFFFF"
+        android:background="@drawable/custom_input"
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="Name"
+        android:text="@string/et_CardHolder"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="251dp"
         android:layout_height="25dp"
         android:layout_marginStart="44dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:text="Save card data for future payments"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5" />
 
     <Switch
-        android:id="@+id/switch1"
+        android:id="@+id/switchSaveCard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
@@ -177,13 +183,13 @@
         app:layout_constraintStart_toEndOf="@+id/textView4" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_confirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:layout_marginBottom="14dp"
-        android:text="Procrrd To Confirm"
+        android:text="@string/btn_confirm"
         app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -196,7 +202,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="43dp"
         android:layout_marginTop="16dp"
-        android:text="Card holder"
+        android:text="@string/lbl_CardHolder"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
 
@@ -206,7 +212,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
         android:layout_marginTop="16dp"
-        android:text="Valid until"
+        android:text="@string/lbl_ValidUntil"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
 
@@ -215,7 +221,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="124dp"
-        android:text="CVV"
+        android:text="@string/lbl_CVV"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView6"
         app:layout_constraintStart_toEndOf="@+id/textView6" />
 
@@ -224,8 +230,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
-        android:layout_marginTop="20dp"
-        android:text="Card Number"
+        android:layout_marginTop="16dp"
+        android:text="@string/lbl_CardNumber"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
