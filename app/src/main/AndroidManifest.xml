@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MADFinalProject">
         <activity
+            android:name=".Edit"
+            android:exported="false" />
+        <activity
+            android:name=".PaymentUnsuccesfull"
+            android:exported="false" />
+        <activity
+            android:name=".PaymentSuccesfull"
+            android:exported="false" />
+        <activity
+            android:name=".View_Card_Data"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
