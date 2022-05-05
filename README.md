@@ -1,5 +1,4 @@
-**MAD_Project**
-Brave apparel
+**BRAVE APPAREL - SLIIT 2nd Year Mobile Application Development Module Project**
 
 **Data_Miners™**
 
