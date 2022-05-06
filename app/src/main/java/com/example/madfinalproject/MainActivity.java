@@ -1,58 +1,68 @@
 package com.example.madfinalproject;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.android.gms.common.internal.Objects;
+import com.example.madfinalproject.databinding.ActivityMainBinding;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
-
-import java.sql.DatabaseMetaData;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
+    ActivityMainBinding binding;
+    String crdNumber,validUntil,cvv,crdHolder;
+    FirebaseDatabase db;
+    DatabaseReference reference;
 
- DatabaseReference adddataRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        final EditText crdNumber = findViewById(R.id.editTextCrdNumber);
-        final EditText validUntil= findViewById(R.id.editTextValidUntil);
-        final EditText cvv= findViewById(R.id.editTextCVV);
-        final EditText crdHolder= findViewById(R.id.editTextCardHolder);
+       binding.btnConfirm.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+              crdNumber = binding.editTextCrdNumber.getText().toString();
+              validUntil =binding.editTextValidUntil.getText().toString();
+              cvv = binding.editTextCVV.getText().toString();
+              crdHolder = binding.editTextCardHolder.getText().toString();
 
-        Button btn_confirm =findViewById(R.id.btn_confirm);
-        DAOPayment dao = new DAOPayment();
+              if(!crdNumber.isEmpty() && !validUntil.isEmpty() && !cvv.isEmpty() && !crdHolder.isEmpty()){
 
-        btn_confirm.setOnClickListener(v ->
-        {
-             Payment payment = new Payment(crdNumber.getText().toString(),validUntil.getText().toString(),cvv.getText().toString(),crdHolder.getText().toString());
-             dao.add(payment).addOnSuccessListener(suc ->
-             {
-                 Toast.makeText(this,"Payment Data Succesfully Added",Toast.LENGTH_SHORT).show();
-             }).addOnFailureListener(er ->
-             {
-                 Toast.makeText(this,""+er.getMessage(),Toast.LENGTH_SHORT).show();
-             });
+                    Payment payment = new Payment(crdNumber,validUntil,cvv,crdHolder);
+                    db =FirebaseDatabase.getInstance();
+                    reference =db.getReference("Payment");
+                    reference.child(crdNumber).setValue(payment).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            binding.editTextCrdNumber.setText("");
+                            binding.editTextValidUntil.setText("");
+                            binding.editTextCVV.setText("");
+                            binding.editTextCardHolder.setText("");
+                            Toast.makeText(MainActivity.this,"Paymentrnt Data Succesfuly added ! ",Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                  openViewCardData(v);
+              }
+              else {
+                  Toast.makeText(MainActivity.this,"Fill all details ! ",Toast.LENGTH_SHORT).show();
+              }
 
-            Intent intent = new Intent(this,View_Card_Data.class);
-
-            startActivity(intent);
-
-        });
+           }
+       });
 
 
     }
-
-
 
 
     //navigation
