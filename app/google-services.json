@@ -1,34 +1,33 @@
 {
   "project_info": {
-    "project_number": "1074689677667",
-    "firebase_url": "https://brave-apparel-default-rtdb.firebaseio.com",
-    "project_id": "brave-apparel",
-    "storage_bucket": "brave-apparel.appspot.com"
+    "project_number": "27983058663",
+    "project_id": "brave-ba4c5",
+    "storage_bucket": "brave-ba4c5.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1074689677667:android:473f8b636cf04fd62e9b56",
+        "mobilesdk_app_id": "1:27983058663:android:f6bd8c1e46c6d01a70f442",
         "android_client_info": {
-          "package_name": "com.example.madfinalproject"
+          "package_name": "com.example.brave"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1074689677667-tdmi71q0fgb4lbr5198re7vg094dl5j2.apps.googleusercontent.com",
+          "client_id": "27983058663-srfllhuk5r0pfqlvq1oq7u43kllji9ms.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBbAPPRLyOsRCClS4BaPfCbcWyKiQSU6To"
+          "current_key": "AIzaSyDezb5VLGm7YpxreoKVHa6tcMyMSf2_OXA"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1074689677667-tdmi71q0fgb4lbr5198re7vg094dl5j2.apps.googleusercontent.com",
+              "client_id": "27983058663-srfllhuk5r0pfqlvq1oq7u43kllji9ms.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
