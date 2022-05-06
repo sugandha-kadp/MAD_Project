@@ -1,5 +1,8 @@
 package com.example.madfinalproject;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -22,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     FirebaseDatabase db;
     DatabaseReference reference;
 
+    String newDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +36,11 @@ public class MainActivity extends AppCompatActivity {
        binding.btnConfirm.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-              crdNumber = binding.editTextCrdNumber.getText().toString();
+               SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+               Date date = new Date();
+               newDate = formatter.format(date);
+
+               crdNumber = binding.editTextCrdNumber.getText().toString();
               validUntil =binding.editTextValidUntil.getText().toString();
               cvv = binding.editTextCVV.getText().toString();
               crdHolder = binding.editTextCardHolder.getText().toString();
@@ -42,14 +50,14 @@ public class MainActivity extends AppCompatActivity {
                     Payment payment = new Payment(crdNumber,validUntil,cvv,crdHolder);
                     db =FirebaseDatabase.getInstance();
                     reference =db.getReference("Payment");
-                    reference.child(crdNumber).setValue(payment).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    reference.child(newDate).setValue(payment).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             binding.editTextCrdNumber.setText("");
                             binding.editTextValidUntil.setText("");
                             binding.editTextCVV.setText("");
                             binding.editTextCardHolder.setText("");
-                            Toast.makeText(MainActivity.this,"Paymentrnt Data Succesfuly added ! ",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this,"Paymentrnt Data Succesfuly added ! "+newDate+"",Toast.LENGTH_SHORT).show();
                         }
                     });
                   openViewCardData(v);
@@ -67,7 +75,9 @@ public class MainActivity extends AppCompatActivity {
 
     //navigation
     public void openViewCardData(View view){
-        Intent intent = new Intent(this,View_Card_Data.class);
+        Intent intent = new Intent(this,ViewCardData.class);
+
+        intent.putExtra("newDate",newDate);
 
         startActivity(intent);
     }

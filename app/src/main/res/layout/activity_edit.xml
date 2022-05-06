@@ -105,7 +105,7 @@
     </RadioGroup>
 
     <EditText
-        android:id="@+id/editTextCrdNumber"
+        android:id="@+id/textViewCrdNumber"
         android:layout_width="319dp"
         android:layout_height="49dp"
         android:layout_marginStart="44dp"
@@ -214,7 +214,7 @@
         android:layout_marginTop="16dp"
         android:text="@string/lbl_ValidUntil"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextCrdNumber" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewCrdNumber" />
 
     <TextView
         android:id="@+id/textView7"

@@ -19,7 +19,7 @@
             android:name=".PaymentSuccesfull"
             android:exported="false" />
         <activity
-            android:name=".View_Card_Data"
+            android:name=".ViewCardData"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
