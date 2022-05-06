@@ -36,25 +36,16 @@ public class ViewCardData extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityViewCardDataBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        binding.btnGetData.setOnClickListener( new  View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                if(!newDate.isEmpty()){
-                    viewCrdData(newDate);
-                }
-                else {
-                    Toast.makeText(ViewCardData.this,"newDate notset",Toast.LENGTH_SHORT).show();
-                }
-
-            }
-        });
-
 
         textViewPaymentData = findViewById(R.id.textViewCrdNumber);
         Intent intent =  getIntent();
         newDate = intent.getStringExtra("newDate");
+    }
 
-
+    @Override
+    protected void onStart() {
+        super.onStart();
+        viewCrdData(newDate);
     }
 
     private void viewCrdData(String newDate){
@@ -67,18 +58,19 @@ public class ViewCardData extends AppCompatActivity {
 
                    if(task.getResult().exists()){
 
-                       Toast.makeText(ViewCardData.this,"Successfully Read",Toast.LENGTH_SHORT).show();
+                       Toast.makeText(ViewCardData.this,"Successfully Get Data From Database",Toast.LENGTH_SHORT).show();
                         DataSnapshot dataSnapshot = task.getResult();
                         String crdNumber = String.valueOf(dataSnapshot.child("crdNumber").getValue());
-                        binding.textViewCrdNumber.setText(crdNumber);
+                        String crdHolder =String.valueOf(dataSnapshot.child("crdHolder").getValue());
+                        binding.textViewCrdNumber.setText("Card Number : "+crdNumber+"  | Card Holder Name :"+crdHolder);
                    }
                    else {
-                       Toast.makeText(ViewCardData.this,"Payment does not exist",Toast.LENGTH_SHORT).show();
+                       Toast.makeText(ViewCardData.this,"Payment Data does not exist",Toast.LENGTH_SHORT).show();
                    }
 
                 }
                 else {
-                    Toast.makeText(ViewCardData.this,"Failed to read",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ViewCardData.this,"Failed to Get Data From Database",Toast.LENGTH_SHORT).show();
                 }
 
             }
