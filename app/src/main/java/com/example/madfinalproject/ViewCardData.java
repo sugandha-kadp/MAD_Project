@@ -27,6 +27,7 @@ public class ViewCardData extends AppCompatActivity {
     //This newDate is created for store Database reference.
     String newDate;
 
+    Button btnPayNow;
     Button btnRemove;
     AlertDialog.Builder builder;
 
@@ -45,6 +46,7 @@ public class ViewCardData extends AppCompatActivity {
         binding = ActivityViewCardDataBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        btnPayNow = findViewById(R.id.btnRemove);
         btnRemove = findViewById(R.id.btnRemove);
         builder = new AlertDialog.Builder(this);
         textViewPaymentData = findViewById(R.id.textViewPaymentData);
@@ -82,6 +84,13 @@ public class ViewCardData extends AppCompatActivity {
                         })
                         .show();
 
+            }
+        });
+
+        binding.btnPayNow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openPaymentSuccesfull(v);
             }
         });
 
@@ -142,6 +151,20 @@ public class ViewCardData extends AppCompatActivity {
     public void openEditPaymentData(View view) {
 
         Intent intent = new Intent(this, Edit.class);
+
+        intent.putExtra("newDate", newDate);
+        intent.putExtra("crdNumber", crdNumber);
+        intent.putExtra("cvv", cvv);
+        intent.putExtra("validUntil", validUntil);
+        intent.putExtra("crdHolder", crdHolder);
+
+        startActivity(intent);
+
+    }
+
+    public void openPaymentSuccesfull(View view) {
+
+        Intent intent = new Intent(this, PaymentSuccesfull.class);
 
         intent.putExtra("newDate", newDate);
         intent.putExtra("crdNumber", crdNumber);

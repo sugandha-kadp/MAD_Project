@@ -13,5 +13,6 @@
     <string name="et_ValidUntil" />
     <string name="et_CVV" />
     <string name="et_CardHolder" />
+    <string name="paymentSuccessful">Payment Successful !</string>
 
 </resources>

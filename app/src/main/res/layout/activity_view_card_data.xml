@@ -101,7 +101,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textViewPaymentData" />
 
         <Button
-            android:id="@+id/btn_confirm"
+            android:id="@+id/btnPayNow"
             android:layout_width="150dp"
             android:layout_height="71dp"
             android:layout_marginStart="128dp"
@@ -112,7 +112,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnEdit"
-            app:layout_constraintVertical_bias="0.217" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/textViewPaymentData"
