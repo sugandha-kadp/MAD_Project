@@ -63,12 +63,15 @@ public class Edit extends AppCompatActivity {
         binding.btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                goBackPaymentData(v);
+
                 String crdNumberNew = binding.editTextUpdateCrdNumber.getText().toString();
                 String validUntilNew =binding.editTextUpdateValidUntil.getText().toString();
                 String cvvNew = binding.editTextUpdateCVV.getText().toString();
                 String crdHolderNew = binding.editTextUpdateCardHolder.getText().toString();
 
                 editPaymentData(crdNumberNew,crdHolderNew,validUntilNew,cvvNew);
+
             }
         });
 
@@ -109,5 +112,10 @@ public class Edit extends AppCompatActivity {
             }
         });
     }
-
+    //navigation Go Back to View Payment Data
+    public void goBackPaymentData (View view){
+        Intent intent = new Intent(this,ViewCardData.class);
+        intent.putExtra("newDate", newDate);
+        startActivity(intent);
+    }
 }

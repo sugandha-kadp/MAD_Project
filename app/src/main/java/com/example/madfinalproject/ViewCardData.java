@@ -40,9 +40,10 @@ public class ViewCardData extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         textViewPaymentData = findViewById(R.id.textViewPaymentData);
-Intent intent =  getIntent();
+        Intent intent = getIntent();
         newDate = intent.getStringExtra("newDate");
 
+        viewCrdData(newDate);
 
         binding.btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,50 +59,48 @@ Intent intent =  getIntent();
     @Override
     protected void onStart() {
         super.onStart();
-        viewCrdData(newDate);
+//        viewCrdData(newDate);
     }
 
-    private void viewCrdData(String newDate){
+    private void viewCrdData(String newDate) {
         reference = FirebaseDatabase.getInstance().getReference("Payment");
         reference.child(newDate).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
 
-                if(task.isSuccessful()){
+                if (task.isSuccessful()) {
 
-                   if(task.getResult().exists()){
+                    if (task.getResult().exists()) {
 
-                       Toast.makeText(ViewCardData.this,"Successfully Get Data From Database",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ViewCardData.this, "Successfully Get Data From Database", Toast.LENGTH_SHORT).show();
                         DataSnapshot dataSnapshot = task.getResult();
-                         crdNumber = String.valueOf(dataSnapshot.child("crdNumber").getValue());
-                         crdHolder =String.valueOf(dataSnapshot.child("crdHolder").getValue());
-                         cvv = String.valueOf(dataSnapshot.child("cvv").getValue());
-                         validUntil = String.valueOf(dataSnapshot.child("validUntil").getValue());
+                        crdNumber = String.valueOf(dataSnapshot.child("crdNumber").getValue());
+                        crdHolder = String.valueOf(dataSnapshot.child("crdHolder").getValue());
+                        cvv = String.valueOf(dataSnapshot.child("cvv").getValue());
+                        validUntil = String.valueOf(dataSnapshot.child("validUntil").getValue());
 
-                        binding.textViewPaymentData.setText("Card Number : "+crdNumber+"  | Card Holder Name :"+crdHolder);
-                   }
-                   else {
-                       Toast.makeText(ViewCardData.this,"Payment Data does not exist",Toast.LENGTH_SHORT).show();
-                   }
+                        binding.textViewPaymentData.setText("Card Number : " + crdNumber + "  | Card Holder Name :" + crdHolder);
+                    } else {
+                        Toast.makeText(ViewCardData.this, "Payment Data does not exist", Toast.LENGTH_SHORT).show();
+                    }
 
-                }
-                else {
-                    Toast.makeText(ViewCardData.this,"Failed to Get Data From Database",Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(ViewCardData.this, "Failed to Get Data From Database", Toast.LENGTH_SHORT).show();
                 }
 
             }
         });
     }
 
-    public void openEditPaymentData(View view){
+    public void openEditPaymentData(View view) {
 
-        Intent intent = new Intent(this,Edit.class);
+        Intent intent = new Intent(this, Edit.class);
 
-        intent.putExtra("newDate",newDate);
-        intent.putExtra("crdNumber",crdNumber);
-        intent.putExtra("cvv",cvv);
-        intent.putExtra("validUntil",validUntil);
-        intent.putExtra("crdHolder",crdHolder);
+        intent.putExtra("newDate", newDate);
+        intent.putExtra("crdNumber", crdNumber);
+        intent.putExtra("cvv", cvv);
+        intent.putExtra("validUntil", validUntil);
+        intent.putExtra("crdHolder", crdHolder);
 
 
         startActivity(intent);
@@ -109,8 +108,8 @@ Intent intent =  getIntent();
     }
 
     //navigation Go Back
-    public void goBack (View view){
-        Intent intent = new Intent(this,MainActivity.class);
+    public void goBack(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 
