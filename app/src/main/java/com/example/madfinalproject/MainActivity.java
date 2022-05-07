@@ -36,11 +36,12 @@ public class MainActivity extends AppCompatActivity {
        binding.btnConfirm.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
+               //get System date with time to refrence.
                SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
                Date date = new Date();
                newDate = formatter.format(date);
 
-               crdNumber = binding.editTextCrdNumber.getText().toString();
+              crdNumber = binding.editTextCrdNumber.getText().toString();
               validUntil =binding.editTextValidUntil.getText().toString();
               cvv = binding.editTextCVV.getText().toString();
               crdHolder = binding.editTextCardHolder.getText().toString();

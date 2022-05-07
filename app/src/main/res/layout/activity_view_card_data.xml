@@ -74,23 +74,8 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.413" />
 
-        <TextView
-            android:id="@+id/textViewCrdNumber"
-            android:layout_width="337dp"
-            android:layout_height="73dp"
-            android:layout_marginStart="36dp"
-            android:layout_marginTop="12dp"
-            android:background="@drawable/custom_input"
-            android:ems="10"
-            android:inputType="number"
-            android:minHeight="48dp"
-            android:text="@string/et_CardNumber"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView8"
-            tools:ignore="SpeakableTextPresentCheck" />
-
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnEdit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="160dp"
@@ -99,45 +84,49 @@
             android:text="Edit"
             android:textColor="@color/purple_700"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewCrdNumber" />
+            app:layout_constraintTop_toBottomOf="@+id/textViewPaymentData" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btnRemove"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="52dp"
             android:backgroundTint="@color/white"
             android:text="Remove"
             android:textColor="@color/purple_700"
-            app:layout_constraintBaseline_toBaselineOf="@+id/button"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnEdit"
+            app:layout_constraintTop_toBottomOf="@+id/textViewPaymentData" />
 
         <Button
             android:id="@+id/btn_confirm"
             android:layout_width="150dp"
             android:layout_height="71dp"
             android:layout_marginStart="128dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="145dp"
             android:layout_marginBottom="52dp"
             android:text="Pay Now"
             app:cornerRadius="60dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            app:layout_constraintTop_toBottomOf="@+id/btnEdit"
             app:layout_constraintVertical_bias="0.217" />
 
-        <Button
-            android:id="@+id/btnGetData"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="44dp"
-            android:layout_marginBottom="53dp"
-            android:text="GetData"
-            app:layout_constraintBottom_toTopOf="@+id/btn_confirm"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
+        <TextView
+            android:id="@+id/textViewPaymentData"
+            android:layout_width="337dp"
+            android:layout_height="73dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/custom_input"
+            android:ems="10"
+            android:inputType="number"
+            android:minHeight="48dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button" />
+            app:layout_constraintTop_toBottomOf="@+id/textView8"
+            tools:ignore="SpeakableTextPresentCheck" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

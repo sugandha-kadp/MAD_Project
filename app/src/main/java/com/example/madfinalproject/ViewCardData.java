@@ -11,14 +11,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.madfinalproject.databinding.ActivityViewCardDataBinding;
-import com.example.madfinalproject.databinding.ActivityViewCardDataBindingImpl;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.zip.DataFormatException;
 
 
 public class ViewCardData extends AppCompatActivity {
@@ -26,6 +23,11 @@ public class ViewCardData extends AppCompatActivity {
     TextView lbl_total_price;
     //This newDate is created for store Database reference.
     String newDate;
+
+    String crdNumber;
+    String crdHolder;
+    String cvv;
+    String validUntil;
 
     ActivityViewCardDataBinding binding;
     DatabaseReference reference;
@@ -37,9 +39,20 @@ public class ViewCardData extends AppCompatActivity {
         binding = ActivityViewCardDataBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        textViewPaymentData = findViewById(R.id.textViewCrdNumber);
-        Intent intent =  getIntent();
+        textViewPaymentData = findViewById(R.id.textViewPaymentData);
+Intent intent =  getIntent();
         newDate = intent.getStringExtra("newDate");
+
+
+        binding.btnEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                openEditPaymentData(v);
+            }
+        });
+
+
     }
 
     @Override
@@ -60,9 +73,12 @@ public class ViewCardData extends AppCompatActivity {
 
                        Toast.makeText(ViewCardData.this,"Successfully Get Data From Database",Toast.LENGTH_SHORT).show();
                         DataSnapshot dataSnapshot = task.getResult();
-                        String crdNumber = String.valueOf(dataSnapshot.child("crdNumber").getValue());
-                        String crdHolder =String.valueOf(dataSnapshot.child("crdHolder").getValue());
-                        binding.textViewCrdNumber.setText("Card Number : "+crdNumber+"  | Card Holder Name :"+crdHolder);
+                         crdNumber = String.valueOf(dataSnapshot.child("crdNumber").getValue());
+                         crdHolder =String.valueOf(dataSnapshot.child("crdHolder").getValue());
+                         cvv = String.valueOf(dataSnapshot.child("cvv").getValue());
+                         validUntil = String.valueOf(dataSnapshot.child("validUntil").getValue());
+
+                        binding.textViewPaymentData.setText("Card Number : "+crdNumber+"  | Card Holder Name :"+crdHolder);
                    }
                    else {
                        Toast.makeText(ViewCardData.this,"Payment Data does not exist",Toast.LENGTH_SHORT).show();
@@ -77,6 +93,20 @@ public class ViewCardData extends AppCompatActivity {
         });
     }
 
+    public void openEditPaymentData(View view){
+
+        Intent intent = new Intent(this,Edit.class);
+
+        intent.putExtra("newDate",newDate);
+        intent.putExtra("crdNumber",crdNumber);
+        intent.putExtra("cvv",cvv);
+        intent.putExtra("validUntil",validUntil);
+        intent.putExtra("crdHolder",crdHolder);
+
+
+        startActivity(intent);
+
+    }
 
     //navigation Go Back
     public void goBack (View view){
