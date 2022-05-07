@@ -2,11 +2,14 @@ package com.example.madfinalproject;
 
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,6 +27,9 @@ public class ViewCardData extends AppCompatActivity {
     //This newDate is created for store Database reference.
     String newDate;
 
+    Button btnRemove;
+    AlertDialog.Builder builder;
+
     String crdNumber;
     String crdHolder;
     String cvv;
@@ -39,6 +45,8 @@ public class ViewCardData extends AppCompatActivity {
         binding = ActivityViewCardDataBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        btnRemove = findViewById(R.id.btnRemove);
+        builder = new AlertDialog.Builder(this);
         textViewPaymentData = findViewById(R.id.textViewPaymentData);
         Intent intent = getIntent();
         newDate = intent.getStringExtra("newDate");
@@ -53,7 +61,46 @@ public class ViewCardData extends AppCompatActivity {
             }
         });
 
+        btnRemove.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                builder.setTitle("Remove")
+                        .setMessage("Are you sure you want to remove Payment Data ? ")
+                        .setCancelable(true)
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
 
+                                deletePaymentData(newDate);
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        })
+                        .show();
+
+            }
+        });
+
+    }
+
+    private void deletePaymentData(String newDate) {
+        reference = FirebaseDatabase.getInstance().getReference("Payment");
+        reference.child(newDate).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()){
+                    Toast.makeText(ViewCardData.this, "Payment Data has been removed", Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+                else {
+                    Toast.makeText(ViewCardData.this, "Payment Data could not removed", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
     @Override
