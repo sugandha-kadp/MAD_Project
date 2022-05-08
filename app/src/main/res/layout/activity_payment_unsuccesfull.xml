@@ -37,7 +37,7 @@
         app:srcCompat="@drawable/unsucces"
         tools:layout_editor_absoluteY="182dp" />
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/lblEditPaymentSuccessful"
         android:layout_width="269dp"
         android:layout_height="45dp"
         android:layout_marginStart="11dp"
@@ -49,7 +49,7 @@
         app:layout_constraintStart_toEndOf="@+id/imageButton3"
         app:layout_constraintTop_toTopOf="parent" />
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnDone"
         android:layout_width="107dp"
         android:layout_height="73dp"
         android:layout_marginBottom="70dp"

@@ -14,5 +14,18 @@
     <string name="et_CVV" />
     <string name="et_CardHolder" />
     <string name="paymentSuccessful">Payment Successful !</string>
+    <string name="textView8">Payment information</string>
+    <string name="textViewPaymentData" />
+    <string name="btnEdit">Edit</string>
+    <string name="btnRemove">Remove</string>
+    <string name="btnPayNow">Pay Now</string>
+    <string name="TextViewEditPaymentData">Edit Payment Data</string>
+    <string name="lblEditPaymentData">Edit Payment Data</string>
+    <string name="btn_update">Update</string>
+    <string name="btnDone">Done</string>
+    <string name="lblEditPaymentSuccessful">Successful Payment</string>
+    <string name="lblCrdNumber">Card Number</string>
+    <string name="lblCardHolder">Card Holder</string>
+    <string name="lblDateTime"><![CDATA[Date & Time]]></string>
 
 </resources>

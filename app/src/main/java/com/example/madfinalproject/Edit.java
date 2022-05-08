@@ -27,12 +27,9 @@ public class Edit extends AppCompatActivity {
     EditText editTextUpdateCVV;
     EditText editTextUpdateCardHolder;
 
-    //This newDate is created for store Database reference.
-    String newDate;
-    String crdNumber;
-    String crdHolder;
-    String cvv;
-    String validUntil;
+
+    String newDate; //This newDate is created for store Database reference.
+    String crdNumber,validUntil,cvv,crdHolder,value,crdType;
 
     ActivityEditBinding binding;
     DatabaseReference reference;
@@ -48,12 +45,14 @@ public class Edit extends AppCompatActivity {
         editTextUpdateCVV= findViewById(R.id.editTextUpdateCVV);
         editTextUpdateCardHolder= findViewById(R.id.editTextUpdateCardHolder);
 
+
         Intent intent =  getIntent();
         newDate = intent.getStringExtra("newDate");
         crdNumber = intent.getStringExtra("crdNumber");
         cvv = intent.getStringExtra("cvv");
         validUntil = intent.getStringExtra("validUntil");
         crdHolder = intent.getStringExtra("crdHolder");
+        value = intent.getStringExtra("value");
 
         viewCrdData();
     }
@@ -82,6 +81,7 @@ public class Edit extends AppCompatActivity {
         binding.editTextUpdateCVV.setText(cvv);
         binding.editTextUpdateValidUntil.setText(validUntil);
         binding.editTextUpdateCardHolder.setText(crdHolder);
+        binding.lblTotalPrice.setText(value);
     }
 
     private void editPaymentData(String crdNumber, String crdHolder, String validUntil, String cvv) {

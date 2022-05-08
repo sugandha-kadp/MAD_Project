@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/left"
@@ -76,6 +78,7 @@
         android:text="@string/paymentSuccessful"
         android:textColor="#000000"
         android:textSize="25sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -83,12 +86,13 @@
         app:layout_constraintVertical_bias="0.423" />
 
     <TextView
-        android:id="@+id/textView9"
-        android:layout_width="196dp"
-        android:layout_height="74dp"
-        android:background="#9EB5B2"
+        android:id="@+id/textViewLblTotalPrice"
+        android:layout_width="281dp"
+        android:layout_height="80dp"
+        android:background="#FBFBFB"
+        android:gravity="center|top"
         android:text="@string/lbl_total_price"
-        android:textSize="11sp"
+        android:textSize="49sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -111,39 +115,42 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/lblCrdHolder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Card Holder Name :"
+        android:gravity="clip_horizontal"
+        android:text="@string/lblCardHolder"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10"
-        app:layout_constraintVertical_bias="0.031" />
+        app:layout_constraintVertical_bias="0.039" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/lblDateTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Card Number :"
+        android:layout_marginTop="4dp"
+        android:gravity="clip_horizontal"
+        android:text="@string/lblDateTime"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblCrdNumber" />
+
+    <TextView
+        android:id="@+id/lblCrdNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:gravity="clip_horizontal"
+        android:text="@string/lblCrdNumber"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
-
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="DateTime :"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+        app:layout_constraintTop_toBottomOf="@+id/lblCrdHolder" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

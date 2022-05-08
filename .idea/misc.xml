@@ -5,11 +5,11 @@
       <map>
         <entry key="..\:/SLIIT/MAD/LAB/MADFinalProject/app/src/main/res/drawable/custom_input.xml" value="0.17263513513513515" />
         <entry key="..\:/SLIIT/MAD/LAB/MADFinalProject/app/src/main/res/drawable/rectangle_roundcorner.xml" value="0.17027027027027028" />
-        <entry key="..\:/SLIIT/MAD/LAB/MADFinalProject/app/src/main/res/layout/activity_edit.xml" value="0.152" />
+        <entry key="..\:/SLIIT/MAD/LAB/MADFinalProject/app/src/main/res/layout/activity_edit.xml" value="0.2" />
         <entry key="..\:/SLIIT/MAD/LAB/MADFinalProject/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/SLIIT/MAD/LAB/MADFinalProject/app/src/main/res/layout/activity_payment_succesfull.xml" value="0.2" />
+        <entry key="..\:/SLIIT/MAD/LAB/MADFinalProject/app/src/main/res/layout/activity_payment_succesfull.xml" value="0.4" />
         <entry key="..\:/SLIIT/MAD/LAB/MADFinalProject/app/src/main/res/layout/activity_payment_unsuccesfull.xml" value="0.152" />
-        <entry key="..\:/SLIIT/MAD/LAB/MADFinalProject/app/src/main/res/layout/activity_view_card_data.xml" value="0.2" />
+        <entry key="..\:/SLIIT/MAD/LAB/MADFinalProject/app/src/main/res/layout/activity_view_card_data.xml" value="0.16" />
       </map>
     </option>
   </component>
