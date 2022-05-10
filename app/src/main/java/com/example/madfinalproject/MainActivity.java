@@ -57,13 +57,13 @@ public class MainActivity extends AppCompatActivity {
                radioButton =findViewById(radioID);
 
                 String crdPID = (String)radioButton.getText().toString();
-                 crdType =crdPID;
+                crdType =crdPID;
 
-               crdNumber = binding.editTextCrdNumber.getText().toString();
-              validUntil =binding.editTextValidUntil.getText().toString();
-              cvv = binding.editTextCVV.getText().toString();
-              crdHolder = binding.editTextCardHolder.getText().toString();
-              value =binding.lblTotalPrice.getText().toString();
+                crdNumber = binding.editTextCrdNumber.getText().toString();
+                validUntil =binding.editTextValidUntil.getText().toString();
+                cvv = binding.editTextCVV.getText().toString();
+                crdHolder = binding.editTextCardHolder.getText().toString();
+                value =binding.lblTotalPrice.getText().toString();
 
                if(crdNumber.isEmpty())
                {

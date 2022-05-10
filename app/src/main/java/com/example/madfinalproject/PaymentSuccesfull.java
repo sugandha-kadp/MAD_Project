@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -18,6 +19,7 @@ public class PaymentSuccesfull extends AppCompatActivity {
     TextView lblCrdHolder;
     TextView lblCrdNumber;
     TextView lblDateTime;
+    Button btnDone;
 
     String newDate;
     String crdNumber;
@@ -39,6 +41,7 @@ public class PaymentSuccesfull extends AppCompatActivity {
         lblCrdHolder = findViewById(R.id.lblCrdHolder);
         lblCrdNumber = findViewById(R.id.lblCrdNumber);
         lblDateTime = findViewById(R.id.lblDateTime);
+        btnDone = findViewById(R.id.btnDone);
 
 
 // Get Data Received from Intent
@@ -55,5 +58,12 @@ public class PaymentSuccesfull extends AppCompatActivity {
         binding.lblCrdNumber.setText("Card Number : "+crdNumber);
         binding.lblDateTime.setText("Payment Date And Time : "+newDate);
 
+        binding.btnDone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PaymentSuccesfull.this,Shop.class);
+                startActivity(intent);
+            }
+        });
     }
 }
