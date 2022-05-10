@@ -1,13 +1,14 @@
 <resources>
     <string name="app_name">Mad Application</string>
-    <string name="BTN2">LOGIN</string>
     <string name="Header">Brave Apparels</string>
     <string name="BTN3">REGISTER</string>
-    <string name="Name">Name</string>
-    <string name="Email">Email</string>
-    <string name="Address">Address</string>
-    <string name="Password">Password</string>
-    <string name="Telephone">Telephone Number</string>
+
+    <string name="Name"></string>
+    <string name="Email"></string>
+    <string name="Address"></string>
+    <string name="Password"></string>
+    <string name="Telephone"></string>
+
     <string name="Member">Already a Member? Login</string>
     <string name="ForgotPassword">Forgot Password?</string>
     <string name="NewHereRegister">New Here? Register</string>
@@ -20,8 +21,8 @@
     <string name="EditName">Edit Name</string>
     <string name="EditEmail">Edit Email</string>
     <string name="EditNumber">Edit Number</string>
-    <string name="BTNSave">Save</string>
-    <string name="BTNCancel">Cancel</string>
+    <string name="BTNSave">Update</string>
+    <string name="BTNCancel">Delete</string>
     <string name="DeliveryAddress">Delivery Address</string>
     <string name="StreetName">Street name</string>
     <string name="HomeNo">No</string>
@@ -42,5 +43,20 @@
     <string name="AlreadyMember">AlreadyMember</string>
     <string name="feedback">Type here</string>
     <string name="UserName">name</string>
+
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <string name="btn_sign_up">Sign Up</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="loginBtnInSignup">Already a user? Login</string>
+    <string name="btn_sign_in">Sign In</string>
+    <string name="welcome_back">Login!</string>
+    <string name="signupBtnInSignIn">Are you new here? Register</string>
+    <string name="user">User</string>
+
+    <string name="_0">0</string>
 
 </resources>

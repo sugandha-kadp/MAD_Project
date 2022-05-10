@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/android_small"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="204dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="320dp"
+        android:gravity="left"
+        android:text="@string/EditName"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.451"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvNumber"
+        android:layout_width="204dp"
+        android:layout_height="50dp"
+        android:gravity="left"
+        android:text="@string/EditNumber"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.449"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
+
+
+    <TextView
+        android:id="@+id/tvPassword"
+        android:layout_width="204dp"
+        android:layout_height="50dp"
+        android:gravity="left"
+        android:text="@string/EditPassword"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.449"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNumber" />
+
+
+    <TextView
+        android:id="@+id/tvEmail"
+        android:layout_width="204dp"
+        android:layout_height="50dp"
+        android:gravity="left"
+        android:text="@string/EditEmail"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.449"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+
+    <TextView
+        android:id="@+id/tvAddress"
+        android:layout_width="204dp"
+        android:layout_height="50dp"
+        android:gravity="left"
+        android:text="@string/DeliveryAddress"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/deletebutton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.449"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPassword"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/deletebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="172dp"
+        android:layout_marginBottom="64dp"
+        android:text="@string/BTNCancel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/updatebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
+        android:text="@string/BTNSave"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/deletebutton"
+        app:layout_constraintHorizontal_bias="0.346"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/feedbackbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
+        android:text="Feedback"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toEndOf="@+id/deletebutton"
+        app:layout_constraintTop_toBottomOf="@+id/tvAddress"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

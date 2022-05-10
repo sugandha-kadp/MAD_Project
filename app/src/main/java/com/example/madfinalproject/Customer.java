@@ -1,4 +1,4 @@
-package com.example.brave;
+package com.example.madfinalproject;
 
 public class Customer {
 
