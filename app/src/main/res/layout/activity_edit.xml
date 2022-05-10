@@ -107,23 +107,6 @@
 
         </RadioGroup>
 
-        <EditText
-            android:id="@+id/editTextUpdateValidUntil"
-            android:layout_width="125dp"
-            android:layout_height="49dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/custom_input"
-            android:drawablePadding="14sp"
-            android:ems="10"
-            android:inputType="number"
-            android:rotation="0"
-            android:rotationX="0"
-            android:text="@string/et_ValidUntil"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView6"
-            tools:ignore="SpeakableTextPresentCheck" />
-
         <TextView
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
@@ -147,42 +130,12 @@
             app:layout_constraintBaseline_toBaselineOf="@+id/textView6"
             app:layout_constraintStart_toEndOf="@+id/textView6" />
 
-        <EditText
-            android:id="@+id/editTextUpdateCVV"
-            android:layout_width="120dp"
-            android:layout_height="49dp"
-            android:layout_marginStart="60dp"
-            android:background="@drawable/custom_input"
-            android:ems="10"
-            android:inputType="number"
-            android:rotation="0"
-            android:rotationX="0"
-            android:text="@string/et_CVV"
-            app:layout_constraintBaseline_toBaselineOf="@+id/editTextUpdateValidUntil"
-            app:layout_constraintStart_toEndOf="@+id/editTextUpdateValidUntil"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <EditText
-            android:id="@+id/editTextUpdateCardHolder"
-            android:layout_width="wrap_content"
-            android:layout_height="49dp"
-            android:layout_marginStart="43dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/custom_input"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            android:text="@string/et_CardHolder"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView5"
-            tools:ignore="SpeakableTextPresentCheck" />
-
         <TextView
             android:id="@+id/textView4"
             android:layout_width="251dp"
             android:layout_height="25dp"
             android:layout_marginStart="44dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="24dp"
             android:text="@string/lbl_SaveCard"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextUpdateCardHolder" />
@@ -215,7 +168,7 @@
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="43dp"
+            android:layout_marginStart="40dp"
             android:layout_marginTop="16dp"
             android:text="@string/lbl_CardHolder"
             app:layout_constraintStart_toStartOf="parent"
@@ -233,21 +186,90 @@
 
         <EditText
             android:id="@+id/editTextUpdateCrdNumber"
-            android:layout_width="300dp"
-            android:layout_height="50dp"
+            android:layout_width="310dp"
+            android:layout_height="51dp"
             android:layout_marginTop="3dp"
             android:layout_marginBottom="8dp"
             android:background="@drawable/custom_input"
             android:ems="10"
+            android:gravity="center"
             android:inputType="numberSigned"
+            android:maxLength="16"
             android:text="@string/et_CardHolder"
+            android:textSize="30dp"
             app:layout_constraintBottom_toTopOf="@+id/textView6"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.36"
+            app:layout_constraintHorizontal_bias="0.445"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView8"
             app:layout_constraintVertical_bias="1.0"
             tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+        <EditText
+            android:id="@+id/editTextUpdateValidUntil"
+            android:layout_width="125dp"
+            android:layout_height="49dp"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/custom_input"
+            android:drawablePadding="14sp"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="4"
+            android:rotation="0"
+            android:rotationX="0"
+            android:text="@string/et_ValidUntil"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView6"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <EditText
+            android:id="@+id/editTextUpdateCVV"
+            android:layout_width="120dp"
+            android:layout_height="49dp"
+            android:layout_marginStart="64dp"
+            android:background="@drawable/custom_input"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="3"
+            android:rotation="0"
+            android:rotationX="0"
+            android:text="@string/et_CVV"
+            android:textSize="25sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/editTextUpdateValidUntil"
+            app:layout_constraintStart_toEndOf="@+id/editTextUpdateValidUntil"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <EditText
+            android:id="@+id/editTextUpdateCardHolder"
+            android:layout_width="303dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/custom_input"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:text="@string/et_CardHolder"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView5"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="21dp"
+            android:layout_height="52dp"
+            android:rotation="-11"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextUpdateValidUntil"
+            app:layout_constraintEnd_toEndOf="@+id/editTextUpdateValidUntil"
+            app:layout_constraintHorizontal_bias="0.49"
+            app:layout_constraintStart_toStartOf="@+id/editTextUpdateValidUntil"
+            app:layout_constraintTop_toTopOf="@+id/editTextUpdateValidUntil"
+            app:srcCompat="@drawable/slash" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

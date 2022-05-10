@@ -27,19 +27,14 @@ public class ViewCardData extends AppCompatActivity {
     TextView textViewPaymentDataCrdHolder;
     TextView textViewPaymentDataCrdNumber;
     TextView textViewPaymentDataCrdType;
+
     //This newDate is created for store Database reference.
     String newDate;
 
-    Button btnPayNow;
-    Button btnRemove;
+    Button btnPayNow,btnRemove;
     AlertDialog.Builder builder;
 
-    String crdNumber;
-    String crdHolder;
-    String cvv;
-    String validUntil;
-    String value;
-    String crdType;
+    String crdNumber,crdHolder,cvv,validUntil,value,crdType;
 
     ActivityViewCardDataBinding binding;
     DatabaseReference reference;
@@ -121,12 +116,6 @@ public class ViewCardData extends AppCompatActivity {
                 }
             }
         });
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-//        viewCrdData(newDate);
     }
 
     private void viewCrdData(String newDate) {
