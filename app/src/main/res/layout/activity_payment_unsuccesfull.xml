@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/left"
     tools:context=".PaymentUnsuccesfull">
+
     <ImageButton
         android:id="@+id/imageButton3"
         android:layout_width="wrap_content"
@@ -16,26 +17,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/homeAsUpIndicator"
-        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
-        app:tint="#FFFFFF" />
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="368dp"
-        android:layout_height="335dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/rectangle_29"
-        tools:layout_editor_absoluteY="239dp" />
+        app:tint="#FFFFFF"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="135dp"
-        android:layout_height="160dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/unsucces"
-        tools:layout_editor_absoluteY="182dp" />
     <TextView
         android:id="@+id/lblEditPaymentSuccessful"
         android:layout_width="269dp"
@@ -48,6 +32,7 @@
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imageButton3"
         app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/btnDone"
         android:layout_width="107dp"
@@ -59,8 +44,18 @@
         android:textSize="20sp"
         app:cornerRadius="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6"
         tools:layout_editor_absoluteX="152dp" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="410dp"
+        android:layout_height="394dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/unsuccess" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -61,11 +61,12 @@
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
         <RadioGroup
-            android:id="@+id/radioGroupPType"
+            android:id="@+id/radioGroupPTypeUpdate"
             android:layout_width="275dp"
             android:layout_height="37dp"
             android:layout_marginStart="45dp"
             android:layout_marginTop="15dp"
+            android:checkedButton="@id/radioButtonVisa"
             android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/lbl_total_price">
@@ -75,6 +76,8 @@
                 android:layout_width="2dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:text="Visa Card"
+                android:textColor="#00000000"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <ImageView
@@ -96,6 +99,8 @@
                 android:layout_width="2dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:text="Master Card"
+                android:textColor="#00000000"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <ImageView
@@ -182,7 +187,7 @@
             android:layout_marginTop="16dp"
             android:text="@string/lbl_CardNumber"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroupPType" />
+            app:layout_constraintTop_toBottomOf="@+id/radioGroupPTypeUpdate" />
 
         <EditText
             android:id="@+id/editTextUpdateCrdNumber"
@@ -269,7 +274,7 @@
             app:layout_constraintHorizontal_bias="0.49"
             app:layout_constraintStart_toStartOf="@+id/editTextUpdateValidUntil"
             app:layout_constraintTop_toTopOf="@+id/editTextUpdateValidUntil"
-            app:srcCompat="@drawable/slash" />
+            app:srcCompat="@drawable/slash"  />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
