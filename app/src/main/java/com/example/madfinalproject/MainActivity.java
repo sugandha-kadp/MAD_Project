@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
                 crdHolder = binding.editTextCardHolder.getText().toString();
                 value =binding.lblTotalPrice.getText().toString();
 
+                //Filed Validation for all inputs
                if(crdNumber.isEmpty())
                {
                    Toast.makeText(MainActivity.this, "Please Enter Card Number ! " , Toast.LENGTH_SHORT).show();
@@ -82,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
                    Toast.makeText(MainActivity.this, "Please Enter Card Holder Name ! ", Toast.LENGTH_SHORT).show();
                }
 
-
+               //Send Data to data base
               if(!crdNumber.isEmpty() && !validUntil.isEmpty() && !cvv.isEmpty() && !crdHolder.isEmpty()){
                   Payment payment = new Payment(crdNumber, validUntil, cvv, crdHolder, value, crdType);
                       db = FirebaseDatabase.getInstance();
@@ -99,7 +100,6 @@ public class MainActivity extends AppCompatActivity {
                           }
                       });
                       openViewCardData(v);
-
               }
            }
        });
@@ -108,21 +108,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     //navigation
     public void openViewCardData(View view){
         Intent intent = new Intent(this,ViewCardData.class);
-
         //send Reference number to next Activity
         intent.putExtra("newDate",newDate);
-
         startActivity(intent);
     }
 
     //navigation Go Back
     public void goBack (View view){
         Intent intent = new Intent(this,MainActivity.class);
-
         startActivity(intent);
     }
 }

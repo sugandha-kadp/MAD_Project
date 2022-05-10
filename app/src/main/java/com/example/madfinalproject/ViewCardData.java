@@ -27,18 +27,14 @@ public class ViewCardData extends AppCompatActivity {
     TextView textViewPaymentDataCrdHolder;
     TextView textViewPaymentDataCrdNumber;
     TextView textViewPaymentDataCrdType;
-
-    //This newDate is created for store Database reference.
-    String newDate;
-
     Button btnPayNow,btnRemove;
     AlertDialog.Builder builder;
 
+    String newDate; //This newDate is created for store Database reference.
     String crdNumber,crdHolder,cvv,validUntil,value,crdType;
 
     ActivityViewCardDataBinding binding;
     DatabaseReference reference;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,26 +45,25 @@ public class ViewCardData extends AppCompatActivity {
         btnPayNow = findViewById(R.id.btnRemove);
         btnRemove = findViewById(R.id.btnRemove);
         builder = new AlertDialog.Builder(this);
-//        textViewPaymentData = findViewById(R.id.textViewPaymentData);
+
         textViewPaymentDataCrdHolder =findViewById(R.id.textViewPaymentDataCrdHolder);
         textViewPaymentDataCrdNumber =findViewById(R.id.textViewPaymentDataCrdHolder);
         textViewPaymentDataCrdType =findViewById(R.id.textViewPaymentDataCrdType);
 
-
         //Get Reference number From Previous Activity
         Intent intent = getIntent();
         newDate = intent.getStringExtra("newDate");
-
         viewCrdData(newDate);
 
+        //Implement Function to Edit button Click
         binding.btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 openEditPaymentData(v);
             }
         });
 
+        //Implement function to Remove Button Click
         btnRemove.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,7 +73,6 @@ public class ViewCardData extends AppCompatActivity {
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-
                                 deletePaymentData(newDate);
                             }
                         })
@@ -89,19 +83,19 @@ public class ViewCardData extends AppCompatActivity {
                             }
                         })
                         .show();
-
             }
         });
 
+        // Implement Function to PayNow Button
         binding.btnPayNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openPaymentSuccesfull(v);
             }
         });
-
     }
 
+    //Implement Delete Function to delete Payment Data before submitting
     private void deletePaymentData(String newDate) {
         reference = FirebaseDatabase.getInstance().getReference("Payment");
         reference.child(newDate).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -123,11 +117,8 @@ public class ViewCardData extends AppCompatActivity {
         reference.child(newDate).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
-
                 if (task.isSuccessful()) {
-
                     if (task.getResult().exists()) {
-
                         Toast.makeText(ViewCardData.this, "Successfully Get Data From Database", Toast.LENGTH_SHORT).show();
                         DataSnapshot dataSnapshot = task.getResult();
 
@@ -138,7 +129,6 @@ public class ViewCardData extends AppCompatActivity {
                         value = String.valueOf(dataSnapshot.child("value").getValue());
                         crdType = String.valueOf(dataSnapshot.child("crdType").getValue());
 
-//                        binding.textViewPaymentData.setText("Card Number : " + crdNumber + "  | Card Holder Name :" + crdHolder);
                         binding.textViewPaymentDataCrdHolder.setText("Card Holder Name : "+crdHolder);
                         binding.textViewPaymentDataCrdNumber.setText("Card Number : "+crdNumber);
                         binding.textViewPaymentDataCrdType.setText("Card Type : "+crdType);
@@ -146,17 +136,14 @@ public class ViewCardData extends AppCompatActivity {
                     } else {
                         Toast.makeText(ViewCardData.this, "Payment Data does not exist", Toast.LENGTH_SHORT).show();
                     }
-
                 } else {
                     Toast.makeText(ViewCardData.this, "Failed to Get Data From Database", Toast.LENGTH_SHORT).show();
                 }
-
             }
         });
     }
 
     public void openEditPaymentData(View view) {
-
         Intent intent = new Intent(this, Edit.class);
 
         intent.putExtra("newDate", newDate);
@@ -168,11 +155,9 @@ public class ViewCardData extends AppCompatActivity {
         intent.putExtra("crdType",crdType);
 
         startActivity(intent);
-
     }
 
     public void openPaymentSuccesfull(View view) {
-
         Intent intent = new Intent(this, PaymentSuccesfull.class);
 
         intent.putExtra("newDate", newDate);
@@ -183,10 +168,7 @@ public class ViewCardData extends AppCompatActivity {
         intent.putExtra("value", value);
         intent.putExtra("crdType",crdType);
 
-
-
         startActivity(intent);
-
     }
 
     //navigation Go Back
@@ -194,5 +176,4 @@ public class ViewCardData extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
-
 }

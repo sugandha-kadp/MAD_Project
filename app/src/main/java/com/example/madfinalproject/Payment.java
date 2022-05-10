@@ -1,7 +1,7 @@
 package com.example.madfinalproject;
 
 public class Payment {
-
+    //Variables
     private String crdNumber;
     private String validUntil;
     private String cvv;
@@ -9,6 +9,7 @@ public class Payment {
     private String value;
     private String crdType;
 
+    //Constructor
     public Payment(String crdNumber, String validUntil, String cvv, String crdHolder, String value, String crdType) {
         this.crdNumber = crdNumber;
         this.validUntil = validUntil;
